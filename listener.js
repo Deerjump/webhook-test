@@ -1,15 +1,11 @@
 const express = require('express');
 const ngrok = require('ngrok');
-const { exec, execFile } = require('child_process');
+const { exec } = require('child_process');
 
 const app = express();
 const PORT = 3000;
 
 (async () =>{
-  runCommand('update.bat')
-    // .then(() => runCommand('git pull'))
-    .catch(console.log);
-
   app.use(express.json());
   app.listen(PORT, async () => {
     console.log(`Listening on port ${PORT}`);
